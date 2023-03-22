@@ -1,20 +1,17 @@
-<!doctype html>
-<html <?php language_attributes(); ?>>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php wp_head(); ?>
-  </head>
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
-  <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-    <?php do_action('get_header'); ?>
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
 
-    <div id="app">
-      <?php echo view(app('sage.view'), app('sage.data'))->render(); ?>
-    </div>
-
-    <?php do_action('get_footer'); ?>
-    <?php wp_footer(); ?>
-  </body>
-</html>
+/** Loads the WordPress Environment and Template */
+require __DIR__ . '/wp-blog-header.php';

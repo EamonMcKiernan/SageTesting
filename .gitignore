@@ -5,20 +5,66 @@
 .budfiles
 npm-debug.log
 yarn-error.log
+
+# ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
+
+# ignore everything in the "wp-content" directory, except:
+# mu-plugins, plugins, and themes directories
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore all mu-plugins, plugins, and themes
+# unless explicitly whitelisted at the end of this file
+wp-content/mu-plugins/*
+wp-content/plugins/*
+wp-content/themes/*
+
+# ignore all files starting with . or ~
+.*
+~*
+
+# ignore node dependency directories (used by grunt)
 node_modules/
-dist/
-*.class
-*.py
-*.log
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
 *.jar
-.idea/
-.DS_Store
-*.app
-*.exe
-*.war
-*.mp4
-*.tiff
-*.avi
-*.flv
-*.mov
-*.wmv
+*.rar
+*.tar
+*.zip
+
+# -------------------------
+# BEGIN Whitelisted Files
+# -------------------------
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!.phpcs.xml.dist
+!README.md
+!CHANGELOG.md
+!composer.json
+
+# track favicon files, if they exist
+!android-chrome-*.png
+!apple-touch-icon*.png
+!browserconfig.xml
+!favicon*.png
+!favicon*.ico
+!manifest.json
+!mstile-*.png
+!safari-pinned-tab.svg
+!site.webmanifest
+
+# track these mu-plugins, plugins, and themes
+# add your own entries here
+!wp-content/mu-plugins/example-mu-plugin/
+!wp-content/plugins/example-plugin/
+!wp-content/themes/example-theme/
