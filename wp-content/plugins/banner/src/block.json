@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/banner",
+	"version": "0.1.0",
+	"title": "Banner",
+	"category": "design",
+	"icon": "flag",
+	"description": "A Banner block for the header of your website.",
+	"attributes": {
+		"width": {
+			"type": "integer"
+		},
+		"title": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		},
+		"blurb": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		},
+		"button_one_url": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		},
+		"button_one_text": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		},
+		"button_two_url": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		},
+		"button_two_text": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"gradients": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true
+			}
+		}
+	},
+	"textdomain": "banner",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
